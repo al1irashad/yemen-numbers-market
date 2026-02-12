@@ -9,7 +9,7 @@ interface Number {
 }
 
 const STORAGE_KEY = "yemen_numbers_market_data";
-const ADMIN_PASSWORD = "admin542866@72460end.."; // يمكن تغييرها
+const ADMIN_PASSWORD = "Rashad00Al-wahdi.."; // يمكن تغييرها
 
 const DEFAULT_NUMBERS: Number[] = [
   {
