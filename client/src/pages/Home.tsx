@@ -55,31 +55,45 @@ export default function Home() {
             onClick={() => setLocation("/admin-login")}
             className="text-sm text-blue-600 hover:text-blue-700 font-medium transition-smooth"
           >
-            لوحة التحكم
+           Admin
           </button>
         </div>
       </div>
       <Header />
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-600 to-blue-700 text-white py-16">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 font-poppins">
-              أرقام مميزة للبيع
-            </h2>
-            <p className="text-xl text-blue-100 mb-6">
-              اختر من بين مئات الأرقام المتاحة من يمن موبايل وسبأفون بأسعار منافسة
-            </p>
-            <Button
-              onClick={() => document.getElementById("numbers")?.scrollIntoView({ behavior: "smooth" })}
-              className="bg-white text-blue-600 hover:bg-gray-100 font-semibold px-6 py-3 rounded-lg transition-smooth"
-            >
-              استعرض الأرقام
-            </Button>
-          </div>
-        </div>
-      </section>
+<section className="relative overflow-hidden bg-gradient-to-br from-blue-700 via-blue-600 to-indigo-700 text-white py-24">
+
+  {/* خلفية دوائر ضبابية فخمة */}
+  <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
+  <div className="absolute bottom-0 left-0 w-96 h-96 bg-indigo-400/20 rounded-full blur-3xl"></div>
+
+  <div className="container mx-auto px-4 relative z-10">
+    <div className="max-w-3xl text-right animate-fade-in">
+
+      <h2 className="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">
+        أرقام مميزة للبيع
+      </h2>
+
+      <p className="text-xl md:text-2xl text-blue-100 mb-8 leading-relaxed">
+        اختر من بين أفضل الأرقام المتاحة من سبأفون ويمن موبايل و واي و يو  
+        بأسعار تنافسية وجودة عالية
+      </p>
+
+      <Button
+        onClick={() =>
+          document.getElementById("numbers")?.scrollIntoView({ behavior: "smooth" })
+        }
+        className="bg-white text-blue-700 hover:bg-gray-100 font-bold px-8 py-4 rounded-2xl shadow-xl transition-all duration-300 hover:scale-105"
+      >
+        استعرض الأرقام
+      </Button>
+
+    </div>
+  </div>
+</section>
+
+
 
       {/* Numbers Section */}
       <section id="numbers" className="py-12">
@@ -97,7 +111,7 @@ export default function Home() {
 
           {/* Numbers Grid */}
           {filteredNumbers.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 animate-fade-in">
               {filteredNumbers.map((num) => (
                 <NumberCard
                   key={num.id}
@@ -109,7 +123,7 @@ export default function Home() {
               ))}
             </div>
           ) : (
-            <div className="text-center py-16 bg-gray-50 rounded-lg">
+            <div className="text-center py-20 bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl shadow-inner">
               <p className="text-gray-600 text-lg mb-4">
                 لم يتم العثور على أرقام تطابق بحثك
               </p>

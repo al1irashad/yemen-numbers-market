@@ -29,14 +29,15 @@ export default function FilterBar({
   ];
 
   return (
-    <div className="bg-white rounded-lg shadow-modern p-6 mb-8">
+    <div className="bg-white/80 backdrop-blur-xl rounded-2xl shadow-xl border border-gray-100 p-8 mb-10 transition-all duration-300 hover:shadow-2xl">
       <div className="space-y-4">
         {/* Header */}
         <div className="flex items-center gap-2 mb-4">
           <Filter className="w-5 h-5 text-blue-600" />
-          <h3 className="text-lg font-bold text-gray-900 font-poppins">
+          <h3 className="text-xl font-extrabold text-gray-900">
             الفلاتر والترتيب
           </h3>
+
         </div>
 
         {/* Filters Grid */}
@@ -52,7 +53,7 @@ export default function FilterBar({
                   key={provider.id}
                   onClick={() => onProviderChange(provider.id as any)}
                   variant={selectedProvider === provider.id ? "default" : "outline"}
-                  className={`transition-smooth ${
+                  className={`rounded-xl px-4 py-2 font-semibold transition-all duration-300 hover:scale-105 ${
                     selectedProvider === provider.id && provider.color ? provider.color : ""
                   }`}
                 >
@@ -72,7 +73,7 @@ export default function FilterBar({
               placeholder="أدخل الرقم..."
               value={searchTerm}
               onChange={(e) => onSearchChange(e.target.value)}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 shadow-sm"
             />
           </div>
 
@@ -85,7 +86,7 @@ export default function FilterBar({
               <select
                 value={sortBy}
                 onChange={(e) => onSortChange(e.target.value as any)}
-                className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="flex-1 px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 shadow-sm"
               >
                 <option value="newest">الأحدث</option>
                 <option value="price-asc">السعر: من الأقل للأعلى</option>
